@@ -3,16 +3,81 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Home</ion-title>
+    <ion-title>Usuarios</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only color="royal">
+        <ion-icon name="person-add"></ion-icon>
+      </button>
+    </ion-buttons>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  <h3>Ionic Menu Starter</h3>
+<ion-content>
+    <ion-list>
+      <ion-item-sliding #item>
+        <ion-item>
+            <ion-avatar item-start="">
+              <img src="./assets/imgs/avatar.jpg">
+            </ion-avatar>
+            <ion-label class="label label-md">
+                <h2>Cher</h2>
+                <p>Ugh. As if.</p>
+            </ion-label>
+        </ion-item>
+        <ion-item-options side="right">
+          <button ion-button color="primary" (click)="archive(item)">
+            <ion-icon ios="ios-build" md="md-build"></ion-icon>
+              Editar
+          </button>
+          <button ion-button color="danger" (click)="archive(item)">
+            <ion-icon ios="ios-trash" md="md-trash"></ion-icon>
+            Borrar
+          </button>
+        </ion-item-options>
+      </ion-item-sliding>
 
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will show you the way.
-  </p>
+      <ion-item-sliding #item>
+        <ion-item>
+          <ion-avatar item-start="">
+            <img src="./assets/imgs/avatar.jpg">
+          </ion-avatar>
+          <ion-label class="label label-md">
+              <h2>Cher</h2>
+              <p>Ugh. As if.</p>
+          </ion-label>
+        </ion-item>
+        <ion-item-options side="right">
+          <button ion-button color="primary" (click)="archive(item)">
+            <ion-icon ios="ios-build" md="md-build"></ion-icon>
+              Editar
+          </button>
+          <button ion-button color="danger" (click)="archive(item)">
+            <ion-icon ios="ios-trash" md="md-trash"></ion-icon>
+            Borrar
+          </button>
+        </ion-item-options>
+      </ion-item-sliding>
 
-  <button ion-button secondary menuToggle>Toggle Menu</button>
+      <ion-item-sliding #item>
+        <ion-item>
+          <ion-avatar item-start="">
+              <img src="./assets/imgs/avatar.jpg">
+            </ion-avatar>
+            <ion-label class="label label-md">
+                <h2>Cher</h2>
+                <p>Ugh. As if.</p>
+            </ion-label>
+        </ion-item>
+        <ion-item-options side="right">
+          <button ion-button color="primary" (click)="archive(item)">
+            <ion-icon ios="ios-build" md="md-build"></ion-icon>
+              Editar
+          </button>
+          <button ion-button color="danger" (click)="archive(item)">
+            <ion-icon ios="ios-trash" md="md-trash"></ion-icon>
+            Borrar
+          </button>
+        </ion-item-options>
+      </ion-item-sliding>
+    </ion-list>
 </ion-content>
