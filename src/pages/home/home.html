@@ -20,16 +20,16 @@
                 <img src="./assets/imgs/avatar.jpg">
               </ion-avatar>
               <ion-label class="label label-md">
-                  <h2>{{ user.name | slice:0:15 }}...</h2>
+                  <h2>{{ user.name | slice:0:15 }}</h2>
                   <p>{{ user.email }}</p>
               </ion-label>
           </ion-item>
           <ion-item-options side="right">
-            <button ion-button color="primary" (click)="archive(item)">
+            <button ion-button color="primary" (click)="updateUser(user)">
               <ion-icon ios="ios-build" md="md-build"></ion-icon>
                 Editar
             </button>
-            <button ion-button color="danger" (click)="archive(item)">
+            <button ion-button color="danger" (click)="deleteUser(user)">
               <ion-icon ios="ios-trash" md="md-trash"></ion-icon>
               Borrar
             </button>

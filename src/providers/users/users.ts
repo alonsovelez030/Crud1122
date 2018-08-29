@@ -9,21 +9,24 @@ export class UsersProvider {
 
   users:User[] = [
     {
-      email:"avmsolucion@hotmail.com",
+      email:"billy@hotmail.com",
       password:"alonso1200",
-      name:"Alonso Velez Marulanda",
+      name:"Willian Henry",
+      last_name:"Gates",
       cellphone:3204880761
     },
     {
-      email:"alonso_work@hotmail.com",
+      email:"apple@hotmail.com",
       password:"alonso1200",
-      name:"Juan Paco de la Mar",
+      name:"Steve Paul",
+      last_name:"Jobs",
       cellphone:3205636598
     },
     {
-      email:"avelez@gmail.com",
+      email:"linux@gmail.com",
       password:"alonso1200",
-      name:"Elizabeth Lopez Hernandez",
+      name:"Linus Benedict ",
+      last_name:"Torvalds",
       cellphone:3215698546
     },
   ];
@@ -38,5 +41,8 @@ export class UsersProvider {
 
   updateUser(){}
 
-  deleteUser(){}
+  deleteUser(user):boolean{
+    this.users = this.users.filter(x => x.email !== user.email);
+    return true;
+  }
 }
