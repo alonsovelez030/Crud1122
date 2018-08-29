@@ -40,7 +40,7 @@ export class UsersProvider {
 
   constructor() {}
 
-  getUsers(){
+  getUsers():User[]{
     return this.users;
   }
 
