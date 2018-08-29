@@ -25,7 +25,8 @@
         <ion-item>
           <ion-input type="tel" [(ngModel)]="formUser.cellphone" placeholder="Teléfono"></ion-input>
         </ion-item>
-        <ion-item>
+        <!-- Solo lo mostramos si se va a agregar un usuario -->
+        <ion-item *ngIf="!edit">
           <ion-input type="text" [(ngModel)]="formUser.email" placeholder="Email"></ion-input>
         </ion-item>
         <ion-item>
@@ -38,7 +39,7 @@
 
       <!-- Submit -->
 	  	<button type="submit" ion-button block color="secondary" (click)="submit()">
-        <span *ngIf="edit">Editar</span>
         <span *ngIf="!edit">Agregar</span>
+        <span *ngIf="edit">Editar</span>
       </button>
   </ion-content>

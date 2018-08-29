@@ -25,8 +25,15 @@ export class UsersProvider {
     {
       email:"linux@gmail.com",
       password:"alonso1200",
-      name:"Linus Benedict ",
+      name:"Linus Benedict",
       last_name:"Torvalds",
+      cellphone:3215698546
+    },
+    {
+      email:"alonso_work@gmail.com",
+      password:"alonso1200",
+      name:"Alonso",
+      last_name:"Velez Marulanda",
       cellphone:3215698546
     },
   ];
@@ -42,7 +49,12 @@ export class UsersProvider {
     return true
   }
 
-  updateUser(){}
+  updateUser(user):boolean{
+    this.users
+    .filter(x => x.email == user.email)
+    .map( x => x = user);
+    return true;
+  }
 
   deleteUser(user):boolean{
     this.users = this.users.filter(x => x.email !== user.email);

@@ -49,10 +49,18 @@ export class EditUserComponent {
         this.formUser.password !== this.passwordConfirm){
           this.toast("La contraseña no coincide",4000);
         }else{
-          let create = this.users.createUser(this.formUser)
-          if(create){
-            this.toast("Usuario creado correctamente",3000);
-            this.dismiss()
+          if(this.edit){
+            let update = this.users.updateUser(this.formUser)
+            if(update){
+              this.toast("Usuario se modificó correctamente",3000);
+              this.dismiss()
+            }
+          }else{
+            let create = this.users.createUser(this.formUser)
+            if(create){
+              this.toast("Usuario creado correctamente",3000);
+              this.dismiss()
+            }
           }
         }
     }else{
