@@ -8,11 +8,15 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { UsersProvider } from '../providers/users/users';
 
+/* SharedModule (Pipes, Directives, Components) */
+import { SharedModule } from '../shared/shared.module';
+
 @NgModule({
   declarations: [
     MyApp
   ],
   imports: [
+    SharedModule,
     BrowserModule,
     IonicModule.forRoot(MyApp),
   ],

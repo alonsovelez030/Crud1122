@@ -10,12 +10,10 @@ import { SharedModule } from '../../shared/shared.module';
     HomePage
   ],
   imports: [
-    SharedModule,
     IonicPageModule.forChild(HomePage),
+    SharedModule
   ],
   entryComponents: [],
-  exports:[
-  	HomePage
-  ]
+  exports:[]
 })
 export class HomePageModule {}

@@ -10,10 +10,13 @@ import { EditUserComponent } from './components/edit-user/edit-user';
 	declarations: [
     EditUserComponent
 	],
-	imports: [],
-	entryComponents:[],
-	exports: [
+	imports: [
+    CommonModule,
+		IonicModule,
+  ],
+	entryComponents:[
     EditUserComponent
-	]
+  ],
+	exports: [EditUserComponent]
 })
 export class SharedModule {}

@@ -3,9 +3,13 @@ import { NavController } from 'ionic-angular';
 import { IonicPage } from 'ionic-angular';
 import { AlertController } from 'ionic-angular';
 import { ToastController } from 'ionic-angular';
+import { ModalController, NavParams } from 'ionic-angular';
 
 /* Providers */
 import { UsersProvider } from '../../providers/users/users';
+
+/* Components */
+import { EditUserComponent } from '../../shared/components/edit-user/edit-user';
 
 @IonicPage()
 @Component({
@@ -17,7 +21,8 @@ export class HomePage {
   constructor(public navCtrl: NavController,
               private users: UsersProvider,
               private alertCtrl: AlertController,
-              private toastCtrl: ToastController) {
+              private toastCtrl: ToastController,
+              public modalCtrl: ModalController) {
   }
 
   deleteUser(user){
@@ -36,7 +41,7 @@ export class HomePage {
           text: 'Eliminar',
           handler: () => {
             let del = this.users.deleteUser(user);
-            if (del) this.Toast("Usuario Eliminado Correctamente",4000)
+            if (del) this.toast("Usuario Eliminado Correctamente",4000)
           }
         }
       ]
@@ -45,10 +50,16 @@ export class HomePage {
   }
 
   updateUser(user){
-    console.log(JSON.stringify(user));
+    let create = this.modalCtrl.create(EditUserComponent, { edit:true, data:user });
+    create.present();
   }
 
-  Toast(msg,duration) {
+  createUser(){
+    let create = this.modalCtrl.create(EditUserComponent, { edit:false });
+    create.present();
+  }
+
+  toast(msg,duration) {
     let toast = this.toastCtrl.create({
       message: msg,
       duration: duration,

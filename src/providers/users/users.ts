@@ -37,7 +37,10 @@ export class UsersProvider {
     return this.users;
   }
 
-  createUser(){}
+  createUser(user):boolean{
+    this.users.push(user);
+    return true
+  }
 
   updateUser(){}
 

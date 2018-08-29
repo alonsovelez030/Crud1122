@@ -1,4 +1,44 @@
-<!-- Generated template for the EditUserComponent component -->
-<div>
-  {{text}}
-</div>
+
+<ion-header>
+
+    <ion-navbar>
+      <ion-title *ngIf="!edit">Agregar Usuario</ion-title>
+      <ion-title *ngIf="edit">Editar Usuario</ion-title>
+      <ion-buttons start>
+        <button ion-button (click)="dismiss()">
+         Cerrrar
+        </button>
+      </ion-buttons>
+    </ion-navbar>
+
+  </ion-header>
+
+
+  <ion-content padding>
+      <ion-list>
+        <ion-item>
+          <ion-input type="text" [(ngModel)]="formUser.name" placeholder="Nombres"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-input type="text" [(ngModel)]="formUser.last_name" placeholder="Apellidos"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-input type="tel" [(ngModel)]="formUser.cellphone" placeholder="Teléfono"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-input type="text" [(ngModel)]="formUser.email" placeholder="Email"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-input type="password" [(ngModel)]="formUser.password" placeholder="Password"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-input type="password" [(ngModel)]="passwordConfirm" placeholder="Confirmar Password"></ion-input>
+        </ion-item>
+      </ion-list>
+
+      <!-- Submit -->
+	  	<button type="submit" ion-button block color="secondary" (click)="submit()">
+        <span *ngIf="edit">Editar</span>
+        <span *ngIf="!edit">Agregar</span>
+      </button>
+  </ion-content>
